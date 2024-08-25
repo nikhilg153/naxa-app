@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import ProjectList from "./components/ProjectList";
+import store from "./store";
+import Map from "./components/Map";
+import SubmissionForm from "./components/SubmissionForm";
+import NavBar from "./components/NavBar";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="container mx-auto p-4">
+        <NavBar />
+        <h1 className="text-3xl font-bold mb-8 mx-10">Projects</h1>
+        <ProjectList />
+        <SubmissionForm />
+        <Map />
+      </div>
+    </Provider>
   );
 }
 
