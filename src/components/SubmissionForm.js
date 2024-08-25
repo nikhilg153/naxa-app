@@ -21,10 +21,6 @@ export default function SubmissionForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <div className="isolate px-6 py-24 sm:py-32 lg:px-8 my-5">
       <div
